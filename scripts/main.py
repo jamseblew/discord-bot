@@ -1,7 +1,7 @@
 from constants import TOKEN, PREFIX
 import discord
 
-async def handle_request(message, arguments):
+async def handle_(message, arguments):
     await message.channel.send('testing')
 
 class MyClient(discord.Client):
@@ -9,15 +9,18 @@ class MyClient(discord.Client):
         print(f'Logged on as {self.user}!')
 
     async def on_message(self, message):
-        print(f'Message from {message.author}: {message.content}')
+        print(f'{message.author}: {message.content}')
 
         # test for prefix
-        content = message.content
-        if not content.startswith(PREFIX):
+        if not message.content.startswith(PREFIX):
             return
 
+        content = message.content
         arguments = content[len(PREFIX) + 1:].split()
         await handle_request(message, arguments)
 
 client = MyClient()
+
+
+
 client.run(TOKEN)
