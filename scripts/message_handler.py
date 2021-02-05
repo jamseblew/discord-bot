@@ -28,14 +28,13 @@ class MessageHandler:
         """
         pattern = pattern.split()
 
-
-
     def create_handler(pattern):
         # return a decorator function which takes their
         # function and adds it to the handlers as tuple
         # (pattern, handleFunction)
 
-    def run_handlers(arguments):
+    async def run_handlers(arguments):
+        
 
 
 """
@@ -45,6 +44,7 @@ self.handler = MessageHandler()
 
 ...
 
-@client.createHandler('list <variable> as <other_variable>')
-async def 
+@client.createHandler('word <variable> something <other_variable>')
+async def function_name(message, variable, other_variable):
+    await do_something()
 
