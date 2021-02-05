@@ -11,6 +11,9 @@ def is_valid_char(c):
     return c in VALID_CHAR_SET
 
 def is_valid_var(var):
+    """
+    test if the variable name is valid
+    """
     assert type(var) == str
     return all(map(is_valid_char, var))
 
@@ -33,14 +36,13 @@ def is_valid_pattern(pattern):
     var_name is vlaid iff valid_var_char(x) for all x
     in var_name.
     """
+    assert type(pattern) == str
     pattern = pattern.split()
 
     for argument in pattern:
         if is_variable_argument(argument): 
             if not is_valid_var(argument[1:-1]):
                 return False
-        elif not is_valid_var(argument):
-            return False
 
     return True
 
