@@ -1,26 +1,31 @@
+# adjusting the path
+import sys
+from pathlib import Path
+sys.path.append(str(Path.cwd() / 'handlers'))
+
+# imports
 from constants import TOKEN, PREFIX
+from message_handler import MessageHandler
 import discord
 
-async def handle_(message, arguments):
-    await message.channel.send('testing')
+main_message_handler = MessageHandler()
+
+@main_message_handler.create_handler('say <string:msg>')
+async def talk(user_message, msg):
+    await user_message.delete()
+    await user_message.channel.send(msg)
 
 class MyClient(discord.Client):
     async def on_ready(self):
         print(f'Logged on as {self.user}!')
 
     async def on_message(self, message):
-        print(f'{message.author}: {message.content}')
-
-        # test for prefix
         if not message.content.startswith(PREFIX):
             return
 
-        content = message.content
-        arguments = content[len(PREFIX) + 1:].split()
-        await handle_request(message, arguments)
+        arguments = message.content[len(PREFIX) + 1:].split()
+        await main_message_handler.run_handlers(message, arguments)
+
 
 client = MyClient()
-
-
-
 client.run(TOKEN)
