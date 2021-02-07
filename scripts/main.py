@@ -1,7 +1,7 @@
 # adjusting the path
 import sys
 from pathlib import Path
-sys.path.append(str(Path.cwd() / 'handlers'))
+sys.path.append(str(Path('.') / 'handlers'))
 
 # imports
 from settings import TOKEN, PREFIX
