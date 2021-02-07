@@ -3,8 +3,8 @@ from pathlib import Path
 import os
 
 # using .env file to grab private token
-env_path= Path('.') / '..' / '.env'
+env_path = Path('.') / '..' / '.env'
 load_dotenv(dotenv_path = env_path)
 
-TOKEN       = os.getenv("TOKEN")
-PREFIX      = "yeetus"
+TOKEN = os.getenv("TOKEN")
+PREFIX = "yeetus"
