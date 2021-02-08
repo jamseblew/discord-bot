@@ -1,5 +1,5 @@
 import asyncio
-from command_pattern import CommandPattern
+from .command_pattern import CommandPattern
 from typing import List
 
 

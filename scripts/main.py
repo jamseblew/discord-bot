@@ -7,9 +7,9 @@ sys.path.append(str(ROOT_PATH / 'scripts' / 'handlers'))
 
 # imports
 from settings import TOKEN, PREFIX, OBJECTIVES
-from message_handler import MessageHandler
+from handlers.message_handler import MessageHandler
 import discord
-import primes, factors
+from misc_func import primes, factors
 
 list_command_handler = MessageHandler()
 

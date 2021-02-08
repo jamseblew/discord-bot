@@ -1,4 +1,4 @@
-from pattern_validator import is_valid_pattern, is_variable_argument
+from .pattern_validator import is_valid_pattern, is_variable_argument
 from typing import List
 
 # mapping of variable typenames to their class
