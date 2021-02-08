@@ -27,6 +27,13 @@ async def prime_handler(user_msg, number):
 async def list_objectives_handler(user_msg):
     await user_msg.channel.send('\n'.join(OBJECTIVES))
 
+@list_command_handler.create_handler('member-count')
+async def member_count_handler(user_msg):
+    guild: discord.Guild = user_msg.channel.guild # There are some strange issues with accessing certain properties of guild
+    # I couldn't list all members in the guild, got something to do with the accessor being a Coroutine
+    # Can't be fucked, good luck to whoever tries to solve this
+    
+    await user_msg.channel.send('Probably more than 1')
 
 class MyClient(discord.Client):
     async def on_ready(self):
