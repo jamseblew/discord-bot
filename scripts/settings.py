@@ -2,7 +2,7 @@ from dotenv import load_dotenv
 from pathlib import Path
 import os
 
-ROOT_PATH = Path(os.path.dirname(__file__)) / '..'
+ROOT_PATH = Path(os.path.dirname(__file__)).parents[0]
 
 # using .env file to grab private token
 env_path = ROOT_PATH / '.env'
