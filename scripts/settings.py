@@ -7,4 +7,6 @@ env_path = Path('.') / '..' / '.env'
 load_dotenv(dotenv_path = env_path)
 
 TOKEN = os.getenv("TOKEN")
-PREFIX = "yeetus"
+
+OBJECTIVES = ["implement ricardo bot", "take over Kaizo", "money"]
+PREFIX = "yeetus "
