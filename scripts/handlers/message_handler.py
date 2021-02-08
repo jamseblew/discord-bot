@@ -1,5 +1,6 @@
 import asyncio
 from command_pattern import CommandPattern
+from typing import List
 
 
 """
@@ -28,7 +29,7 @@ class MessageHandler:
 
         return decorated_handler
 
-    async def run_handlers(self, message, arguments: list[str]):
+    async def run_handlers(self, message, arguments: List[str]):
         for command_pattern, pattern_handler in self.handlers:
             pattern_object = command_pattern.gen_object(arguments)
 

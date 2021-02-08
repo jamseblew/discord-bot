@@ -1,4 +1,5 @@
 from pattern_validator import is_valid_pattern, is_variable_argument
+from typing import List
 
 # mapping of variable typenames to their class
 PATTERN_TYPES = {
@@ -79,7 +80,7 @@ class CommandPattern:
 
 
     # PRIVATE METHODS 
-    def _can_translate_args(self, arguments: list[str]):
+    def _can_translate_args(self, arguments: List[str]):
         """
         returns True if the arguments have input strings
         which can be translated into the specified typename.
@@ -95,7 +96,7 @@ class CommandPattern:
         return True
 
 
-    def _is_match(self, arguments: list[str]):
+    def _is_match(self, arguments: List[str]):
         """
         returns True if the arguments match self.pattern
         """
@@ -115,7 +116,7 @@ class CommandPattern:
 
 
     # PUBLIC METHODS
-    def gen_object(self, arguments: list[str]):
+    def gen_object(self, arguments: List[str]):
         """
         returns None if the arguments do not match the
         pattern.
