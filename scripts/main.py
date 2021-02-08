@@ -1,8 +1,9 @@
 # adjusting the path
 import sys
-from pathlib import Path
-sys.path.append(str(Path('.') / 'handlers'))
-sys.path.append(str(Path('.') / 'misc_func'))
+from settings import ROOT_PATH
+sys.path.append(str(ROOT_PATH / 'scripts'))
+sys.path.append(str(ROOT_PATH / 'scripts' / 'misc_func'))
+sys.path.append(str(ROOT_PATH / 'scripts' / 'handlers'))
 
 # imports
 from settings import TOKEN, PREFIX, OBJECTIVES
