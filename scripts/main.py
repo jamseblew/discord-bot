@@ -1,15 +1,8 @@
-# adjusting the path
-import sys
-from settings import ROOT_PATH
-sys.path.append(str(ROOT_PATH / 'scripts'))
-sys.path.append(str(ROOT_PATH / 'scripts' / 'misc_func'))
-sys.path.append(str(ROOT_PATH / 'scripts' / 'handlers'))
-
 # imports
 from settings import TOKEN, PREFIX, OBJECTIVES
 from handlers.message_handler import MessageHandler
-import discord
 from misc_func import primes, factors
+import discord
 
 list_command_handler = MessageHandler()
 
